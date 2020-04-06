@@ -1,0 +1,56 @@
+{
+  "name": "snow-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mrmcc3/snow-template.git",
+  "author": "Michael McClintock",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "clean-css-cli": "^4.3.0",
+    "concurrently": "^5.1.0",
+    "purgecss": "^2.1.0",
+    "servor": "^3.2.0",
+    "snowpack": "^1.6.0",
+    "tailwindcss": "^1.2.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.11.1",
+    "lodash-es": "^4.17.15",
+    "react": "npm:@pika/react",
+    "react-dom": "npm:@pika/react-dom",
+    "react-router": "^6.0.0-alpha.3",
+    "react-router-dom": "^6.0.0-alpha.3"
+  },
+  "scripts": {
+    "prepare": "snowpack --clean --stat",
+    "css:gen": "tailwind build src/app.css -o out/app.css",
+    "css:purge": "purgecss -c purgecss.config.js -o out",
+    "css:clean": "cleancss -o out/app.css out/app.css",
+    "css:build": "yarn css:gen && yarn css:purge && yarn css:clean",
+    "js:watch": "babel src --out-dir out --verbose --watch",
+    "js:build": "babel src --out-dir out --minified --no-comments",
+    "optimize": "snowpack --clean --include 'out/**/*.js' --optimize --stat",
+    "dev": "yarn css:gen && snowpack --clean && concurrently servor 'yarn js:watch'",
+    "build": "yarn css:build && yarn js:build && yarn optimize"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "snowpack/assets/babel-plugin.js",
+        {}
+      ]
+    ]
+  }
+}
