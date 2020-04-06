@@ -35,7 +35,8 @@
     "js:build": "babel src --out-dir out --minified --no-comments",
     "optimize": "snowpack --clean --include 'out/**/*.js' --optimize --stat",
     "dev": "yarn css:gen && snowpack --clean && concurrently servor 'yarn js:watch'",
-    "build": "yarn css:build && yarn js:build && yarn optimize"
+    "build": "yarn css:build && yarn js:build && yarn optimize",
+    "now-build": "yarn build && bash scripts/public.sh"
   },
   "prettier": {
     "trailingComma": "es5",
