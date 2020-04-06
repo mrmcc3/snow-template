@@ -1,13 +1,52 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { sample } from 'lodash-es'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useSearchParams,
+  useLocation
+} from 'react-router-dom'
 
-function App() {
+function Home() {
   return (
-    <div className="text-xl font-bold text-pink-600 m-6">
-      {sample(['yep', 'yup', 'yeah', 'hell no!'])}
+    <div>
+      <h1>Home</h1>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
     </div>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+function About() {
+  const p = useSearchParams()
+  return (
+    <div>
+      <h1>About {p.toString()}</h1>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+    </div>
+  )
+}
+
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('app')
+)
