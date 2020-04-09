@@ -8,4 +8,5 @@ module.exports = {
   ],
   swDest: 'sw.js',
   inlineWorkboxRuntime: true,
+  navigateFallback: '/index.html'
 }
