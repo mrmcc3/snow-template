@@ -6,7 +6,9 @@ module.exports = {
     'out/**/*.{js,css}',
     'fonts/**/*.woff2',
     'robots.txt',
-    'manifest.json'
+    'manifest.json',
+    'favicon.ico',
+    'img/*.png'
   ],
   swDest: 'public/sw.js',
   inlineWorkboxRuntime: true,
