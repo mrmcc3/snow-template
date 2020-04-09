@@ -2,6 +2,7 @@ node_modules
 web_modules
 /out
 /public
+sw.js
 
 .idea
 *.iml

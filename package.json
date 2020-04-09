@@ -16,7 +16,8 @@
     "purgecss": "^2.1.0",
     "servor": "^3.2.0",
     "snowpack": "^1.6.0",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.2.0",
+    "workbox-cli": "^5.1.2"
   },
   "dependencies": {
     "date-fns": "^2.11.1",
@@ -24,7 +25,9 @@
     "react": "npm:@pika/react",
     "react-dom": "npm:@pika/react-dom",
     "react-router": "^6.0.0-alpha.3",
-    "react-router-dom": "^6.0.0-alpha.3"
+    "react-router-dom": "^6.0.0-alpha.3",
+    "swr": "^0.2.0",
+    "workbox-window": "^5.1.2"
   },
   "scripts": {
     "prepare": "snowpack --clean --stat",
@@ -37,7 +40,7 @@
     "optimize": "snowpack --clean --include 'out/**/*.js' --optimize --stat",
     "dev": "yarn css:gen && snowpack --clean && concurrently servor 'yarn js:watch'",
     "build": "yarn css:build && yarn js:build && yarn optimize",
-    "now-build": "yarn build && bash scripts/public.sh"
+    "now-build": "yarn build && yarn workbox generateSW && bash scripts/public.sh"
   },
   "prettier": {
     "trailingComma": "es5",
