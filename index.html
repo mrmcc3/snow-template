@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>snow-template</title>
-    <meta name="description" content="A snowpack template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <title>snow-template</title>
+    <meta name="description" content="A snowpack template" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
     <link href="/out/app.css" rel="stylesheet" />
+    <meta name="theme-color" content="#2F3BA2" />
   </head>
   <body>
+    <noscript><p>This app requires javascript!</p></noscript>
     <div id="app"></div>
     <script type="module" src="/out/app.js"></script>
   </body>
