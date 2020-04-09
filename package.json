@@ -40,7 +40,7 @@
     "optimize": "snowpack --clean --include 'out/**/*.js' --optimize --stat",
     "dev": "yarn css:gen && snowpack --clean && concurrently servor 'yarn js:watch'",
     "build": "yarn css:build && yarn js:build && yarn optimize",
-    "now-build": "yarn build && yarn workbox generateSW && bash scripts/public.sh"
+    "now-build": "yarn build && bash scripts/public.sh && yarn workbox generateSW"
   },
   "prettier": {
     "trailingComma": "es5",

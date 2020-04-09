@@ -1,5 +1,5 @@
 module.exports = {
-  globDirectory: '.',
+  globDirectory: 'public',
   globPatterns: [
     'index.html',
     'web_modules/**/*.{js,json}',
@@ -7,7 +7,7 @@ module.exports = {
     'fonts/**/*.woff2',
     'robots.txt'
   ],
-  swDest: 'sw.js',
+  swDest: 'public/sw.js',
   inlineWorkboxRuntime: true,
   navigateFallback: '/index.html'
 }
