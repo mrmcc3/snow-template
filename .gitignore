@@ -1,8 +1,10 @@
 node_modules
 web_modules
 /out
-/public
-sw.js
+/public/out
+/public/web_modules
+/public/index.html
+/public/sw.js*
 
 .idea
 *.iml
