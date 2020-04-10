@@ -30,7 +30,7 @@
     "workbox-window": "^5.1.2"
   },
   "scripts": {
-    "prepare": "snowpack --clean --stat",
+    "prepare": "snowpack --clean",
     "css:gen": "tailwind build src/app.css -o out/app.css",
     "css:purge": "purgecss -c purgecss.config.js -o out",
     "css:clean": "cleancss -o out/app.css out/app.css",
@@ -41,11 +41,6 @@
     "dev": "yarn css:gen && snowpack --clean && concurrently servor 'yarn js:watch'",
     "build": "yarn css:build && yarn js:build && yarn optimize",
     "now-build": "yarn build && bash scripts/public.sh && yarn workbox generateSW"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true
   },
   "babel": {
     "presets": [
