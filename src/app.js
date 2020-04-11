@@ -8,8 +8,7 @@ const About = lazy(() => import('./about.js'))
 
 function App() {
   return (
-    <div>
-      <ServiceWorker/>
+    <>
       <h1>Welcome</h1>
       <Suspense fallback={<div>loading...</div>}>
         <Routes>
@@ -17,12 +16,13 @@ function App() {
           <Route path="about" element={<About />} />
         </Routes>
       </Suspense>
-    </div>
+    </>
   )
 }
 
 ReactDOM.render(
   <Router>
+    <ServiceWorker />
     <App />
   </Router>,
   document.getElementById('app')
