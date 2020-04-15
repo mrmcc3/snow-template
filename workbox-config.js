@@ -11,6 +11,5 @@ module.exports = {
     'img/*.png'
   ],
   swDest: 'public/sw.js',
-  inlineWorkboxRuntime: true,
   navigateFallback: '/index.html'
 }
