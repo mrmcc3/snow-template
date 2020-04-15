@@ -9,7 +9,7 @@ const About = lazy(() => import('./about.js'))
 function App() {
   return (
     <>
-      <h1>Welcome</h1>
+      <h1 className="font-bold text-xl">Welcome</h1>
       <Suspense fallback={<div>loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
